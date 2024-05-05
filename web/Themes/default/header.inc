@@ -340,7 +340,8 @@ function print_report_link(User $user) : void
 
   $submit = new ElementInputSubmit();
   $submit->setAttributes(array('title' => get_vocab('show_my_entries'),
-                               'value' => $user->display_name));
+                               'value' => $user->display_name,
+                               'style' => 'cursor: pointer'));
   $form->addElement($submit);
 
   $form->render();
@@ -375,6 +376,7 @@ function print_logonoff_button(array $params, string $value) : void
   // The submit button
   $element = new ElementInputSubmit();
   $element->setAttribute('value', $value);
+  $element->setAttribute('style', 'cursor: pointer');
   $form->addElement($element);
 
   $form->render();
